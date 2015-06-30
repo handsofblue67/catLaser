@@ -41,47 +41,47 @@ void move()
 		int xDiff = posX - randX;
 		int yDiff = posY - randY;
 		
-                if(xDiff > 0)
+                if(posX < randX)
 		{
 			
-		        servoX.write(++posX);      
-			//if(posY < 50)
-				delay(posY/4);
+		    servoX.write(++posX);      
+			if(posY < 50)
+				delay(rate + posY/4);
       
-			//else
-				//delay(-(posY/4));
+			else
+				delay(rate - (posY/4));
 		}
     
-		else if (xDiff < 0)
+		else if (posX > randX)
 		{
 			servoX.write(--posX);
-			//if (posY < 50)
-				delay(posY/4);
+			if (posY < 50)
+				delay(rate + posY/4);
 
-		//	else
-				//delay(-(posY/4));
+			else
+				delay(rate - (posY/4));
 
 
 			delay(1);
 		}
-		if(yDiff > 0)
+		if(posY < randY)
 		{
 			servoY.write(posY++);
-			//if(posY < 50)
-				delay(posY/4);
+			if(posY < 50)
+				delay(rate + posY/4);
         
-			//else
-			//	delay(-(posY/4));
+			else
+				delay(rate - (posY/4));
 		}
     
-		else if (yDiff < 0)
+		else if (posY > randY)
 		{
 			servoY.write(posY--);
-			//if (posY < 50)
-				delay(posY/4);
+			if (posY < 50)
+				delay(rate + posY/4);
 
-			//else
-			//	delay(-(posY/4));
+			else
+				delay(rate - (posY/4));
 
 
 			delay(1);
@@ -92,7 +92,7 @@ void move()
 
 void randomize()
 {
-      	//rate = random(20, 60);
+      	rate = random(20, 60);
         
         randY = random(35, 75);
 	randX = random(45, 135);
