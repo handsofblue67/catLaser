@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <Servo.h>
 
 Servo servoY;
@@ -25,7 +26,7 @@ void setup()
 void loop() 
 {
         randomize();
-		delay(2000);
+	delay(1000);
 }
 
 void move()
@@ -36,47 +37,51 @@ void move()
                 Serial.println(posX);
                 Serial.println(posY);
                 Serial.print("\n");*/
+
+		int xDiff = posX - randX;
+		int yDiff = posY - randY;
 		
-                if(posX < randX)
+                if(xDiff > 0)
 		{
+			
 		        servoX.write(++posX);      
 			if(posY < 50)
-				delay(rate-5);
+				delay(posY/4);
       
 			else
-				delay(rate+5);
+				delay(-(posY/4));
 		}
     
-				else if (posX > randX)
-				{
-					servoX.write(--posX);
-					if (posY < 50)
-						delay(rate - 5);
+		else if (xDiff < 0)
+		{
+			servoX.write(--posX);
+			if (posY < 50)
+				delay(posY/4);
 
-					else
-						delay(rate + 5);
+			else
+				delay(-(posY/4));
 
 
-					delay(1);
-				}
-		if(posY < randY)
+			delay(1);
+		}
+		if(yDiff > 0)
 		{
 			servoY.write(posY++);
 			if(posY < 50)
-				delay(rate-5);
+				delay(posY/4);
         
 			else
-				delay(rate+5);
+				delay(-(posY/4));
 		}
     
-		else if (posY > randY)
+		else if (yDiff < 0)
 		{
 			servoY.write(posY--);
 			if (posY < 50)
-				delay(rate - 5);
+				delay(posY/4);
 
 			else
-				delay(rate + 5);
+				delay(-(posY/4));
 
 
 			delay(1);
@@ -87,11 +92,12 @@ void move()
 
 void randomize()
 {
-      	rate = random(20, 60);
+      	//rate = random(20, 60);
         
-        randY = random(25, 75);
-		randX = random(45, 135);
-        /*Serial.print("randX and y: ");
+        randY = random(35, 75);
+	randX = random(45, 135);
+       
+	 /*Serial.print("randX and y: ");
         Serial.println(randX);
         Serial.println(randY);
         Serial.print("Starting RNG\n");*/
