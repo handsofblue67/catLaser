@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "laser", "..\laser\laser.vcxproj", "{0FC7BEDE-9A5C-4BE0-8386-3A9F0F6592AF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "catLaser", "catLaser.vcxproj", "{84C1C160-91C9-4107-912E-E27C44B6F82B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0FC7BEDE-9A5C-4BE0-8386-3A9F0F6592AF}.Debug|Win32.ActiveCfg = Debug|Win32
-		{0FC7BEDE-9A5C-4BE0-8386-3A9F0F6592AF}.Debug|Win32.Build.0 = Debug|Win32
-		{0FC7BEDE-9A5C-4BE0-8386-3A9F0F6592AF}.Release|Win32.ActiveCfg = Release|Win32
-		{0FC7BEDE-9A5C-4BE0-8386-3A9F0F6592AF}.Release|Win32.Build.0 = Release|Win32
+		{84C1C160-91C9-4107-912E-E27C44B6F82B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{84C1C160-91C9-4107-912E-E27C44B6F82B}.Debug|Win32.Build.0 = Debug|Win32
+		{84C1C160-91C9-4107-912E-E27C44B6F82B}.Release|Win32.ActiveCfg = Release|Win32
+		{84C1C160-91C9-4107-912E-E27C44B6F82B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
