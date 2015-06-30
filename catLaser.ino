@@ -45,21 +45,21 @@ void move()
 		{
 			
 		        servoX.write(++posX);      
-			if(posY < 50)
+			//if(posY < 50)
 				delay(posY/4);
       
-			else
-				delay(-(posY/4));
+			//else
+				//delay(-(posY/4));
 		}
     
 		else if (xDiff < 0)
 		{
 			servoX.write(--posX);
-			if (posY < 50)
+			//if (posY < 50)
 				delay(posY/4);
 
-			else
-				delay(-(posY/4));
+		//	else
+				//delay(-(posY/4));
 
 
 			delay(1);
@@ -67,21 +67,21 @@ void move()
 		if(yDiff > 0)
 		{
 			servoY.write(posY++);
-			if(posY < 50)
+			//if(posY < 50)
 				delay(posY/4);
         
-			else
-				delay(-(posY/4));
+			//else
+			//	delay(-(posY/4));
 		}
     
 		else if (yDiff < 0)
 		{
 			servoY.write(posY--);
-			if (posY < 50)
+			//if (posY < 50)
 				delay(posY/4);
 
-			else
-				delay(-(posY/4));
+			//else
+			//	delay(-(posY/4));
 
 
 			delay(1);
