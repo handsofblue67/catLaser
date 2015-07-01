@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <Servo.h>
 
 const int rate = 20;
@@ -30,7 +29,7 @@ void loop()
 
 void move()
 {
-        while(posX != randX || posY != randY)
+    while(posX != randX || posY != randY)
 	{    
 		if(posX < randX)
 		{
@@ -61,7 +60,7 @@ void move()
 void randomize()
 {
         randY = random(35, 75);
-	randX = random(45, 135);
+		randX = random(45, 135);
  	
         posY = servoY.read();	
         posX = servoX.read();
