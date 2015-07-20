@@ -21,9 +21,9 @@ int yPos;
 void setup() 
 {
 	yServo.attach(yServoPin);
-	yServo.write(0, 255, false);
 	xServo.attach(xServoPin);
-	xServo.write(0, 255, true);  
+	yServo.write(yMin + yMax / 2, 255, false);
+	xServo.write(xMin + xMax / 2, 255, true);  
 
 	//noise from analog pin 0 will create a 'random' seed for RNG
 	randomSeed(analogRead(0));
@@ -32,8 +32,8 @@ void setup()
 void loop()
 {
 
-	yRand = random(20, 72);
-	xRand = random(45, 135);
+	yRand = random(yMin, yMax);
+	xRand = random(xMin, xMax);
 
 	yPos = yServo.read();
 	xPos = xServo.read();
@@ -41,11 +41,11 @@ void loop()
 	yServo.write(yRand, tangent(), false);
 	xServo.write(xRand, tangent(), true);
 
-	delay(2000);
+	delay(random(500, 4000);
 }
 
 int tangent()
 {
-	return 48 * tan(yPos * 3.14 / 180) - 20;
+	return 255 - (2 * (48 * tan(yPos * 3.14 / 180)));
 }
 
