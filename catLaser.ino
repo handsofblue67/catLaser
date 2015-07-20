@@ -26,25 +26,21 @@ void setup() {
 
 void loop()
 {
-	randomize();
-	delay(2000);
-}
 
-void move()
-{
-	yServo.write(yRand, 48 * tan(yPos * 3.14 / 180) - 20, false);
-	xServo.write(xRand, 48 * tan(yPos * 3.14 / 180) - 20, true);
-}
-
-void randomize()
-{
 	yRand = random(20, 72);
 	xRand = random(45, 135);
 
 	yPos = yServo.read();
 	xPos = xServo.read();
 
-	move();
+	yServo.write(yRand, tangent(), false);
+	xServo.write(xRand, tangent(), true);
+
+	delay(2000);
 }
 
+int tangent()
+{
+	return 48 * tan(yPos * 3.14 / 180) - 20;
+}
 
