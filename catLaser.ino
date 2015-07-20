@@ -6,7 +6,11 @@ VarSpeedServo xServo;
 
 const int yServoPin = 8; // the digital pin used for the first servo
 const int xServoPin = 9; // the digital pin used for the second servo
-const int rate = 20;
+
+int xMin = 45;
+int yMin = 20;
+int xMax = 135;
+int yMax = 72;
 
 int xRand;
 int yRand;
@@ -14,11 +18,12 @@ int yRand;
 int xPos;
 int yPos;
 
-void setup() {
-	yServo.attach(yServoPin);  // attaches the servo on pin 8 to the servo object
-	yServo.write(0, 255, false); // set the intial position of the servo, as fast as possible, run in background
-	xServo.attach(xServoPin);  // attaches the servo on pin 9 to the servo object
-	xServo.write(0, 255, true);  // set the intial position of the servo, as fast as possible, wait until done
+void setup() 
+{
+	yServo.attach(yServoPin);
+	yServo.write(0, 255, false);
+	xServo.attach(xServoPin);
+	xServo.write(0, 255, true);  
 
 	//noise from analog pin 0 will create a 'random' seed for RNG
 	randomSeed(analogRead(0));
