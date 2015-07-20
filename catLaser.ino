@@ -22,7 +22,7 @@ void setup()
 {
 	yServo.attach(yServoPin);
 	xServo.attach(xServoPin);
-	yServo.write(yMin + yMax / 2, 255, false);
+	yServo.write(yMin + yMax / 2, 255, false); //center servos
 	xServo.write(xMin + xMax / 2, 255, true);  
 
 	//noise from analog pin 0 will create a 'random' seed for RNG
@@ -41,7 +41,7 @@ void loop()
 	yServo.write(yRand, tangent(), false);
 	xServo.write(xRand, tangent(), true);
 
-	delay(random(500, 4000);
+	delay(random(500, 4000));
 }
 
 int tangent()
