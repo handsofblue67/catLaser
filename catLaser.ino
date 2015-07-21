@@ -15,6 +15,8 @@ int yMax = 72;
 int xRand;
 int yRand;
 
+int rate;
+
 int xPos;
 int yPos;
 
@@ -37,15 +39,15 @@ void loop()
 
 	yPos = yServo.read();
 	xPos = xServo.read();
-
-	yServo.write(yRand, tangent(), false);
-	xServo.write(xRand, tangent(), true);
+	rate = tangent();
+	yServo.write(yRand, rate, false);
+	xServo.write(xRand, rate, true);
 
 	delay(random(500, 4000));
 }
 
 int tangent()
 {
-	return 255 - (2 * (48 * tan(yPos * 3.14 / 180)));
+	return 147 - (48 * tan(yPos * 3.14 / 180));
 }
 
